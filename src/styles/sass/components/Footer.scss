@@ -1,0 +1,16 @@
+.Footer {
+    @include gradient-1(180deg, .85, .4);
+    padding: 3.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    color: $color-gray-2;
+    &-Icon{
+        width: 3rem;
+        img {
+            max-width: 100%;
+        }
+    }
+}

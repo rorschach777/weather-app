@@ -1,0 +1,14 @@
+
+.search-bar {
+    @include center-block($gutter-vertical);
+    padding: 1rem;
+    border-radius: 25rem;
+    border: none;
+    outline: none;
+    width: 108rem;
+    max-width: 85%;
+    transition: all .2s;
+    &:focus{
+        transform: scale(1.1);
+    }
+}
