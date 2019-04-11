@@ -5,7 +5,7 @@ import Aux from '../hoc/Aux/Aux';
 const Input = (props) => {
     return (
        <Aux>
-          <input id={props.id} className="search-bar" onChange={props.handleValue} type="text" placeholder={props.placeText}/>
+          <input id={props.id} className="search-bar " onChange={props.handleValue} type="text" placeholder={props.placeText}/>
        </Aux>
     );
 };

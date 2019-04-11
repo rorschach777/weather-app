@@ -1,5 +1,5 @@
 import React from 'react';
-import Icon from '../assets/icon.png'
+
 
 const DashboardDailyItem = (props) => {
 

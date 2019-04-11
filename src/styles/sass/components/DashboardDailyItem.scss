@@ -6,7 +6,7 @@
     
     position: relative;
     height: auto;
-    min-height: 200px;
+    min-height: 240px;
     overflow: hidden;
     box-sizing: border-box;
     padding: 1rem;
@@ -26,8 +26,7 @@
         @include grid-column(12); 
         min-height: 200px;  
         margin-bottom: 1rem;
-        // @include center-block(.5rem);
-        // height: 15rem;
+        
     }
     h6{
         text-align: center;

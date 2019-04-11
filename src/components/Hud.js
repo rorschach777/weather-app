@@ -1,5 +1,8 @@
 import React from 'react';
 import icon from '../assets/icon.png'
+const HudIcon = ()=>{
+    return 'X'
+}
 const Hud = (props) => {
     return (
         <div className="hud">
@@ -25,3 +28,5 @@ const Hud = (props) => {
 };
 
 export default Hud;
+// props.fiveDayForecast[0].Day.IconPhrase
+// ()=>this.props.switchIcon(props.fiveDayForecast[0].Day.IconPhrase)

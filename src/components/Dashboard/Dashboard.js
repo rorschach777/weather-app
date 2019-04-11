@@ -1,13 +1,17 @@
 import React from 'react';
-import DashboardItem from './DashboardItem';
-import DashboardDailyItem from './DashboardDailyItem';
-import DashboardDetail from './DashboardDetail'
 
+
+import DashboardDailyItem from './DashboardDailyItems/DashboardDailyItem';
+import DashboardDetail from './DashboardDetails/DashboardDetail';
+
+import Footer from '../Footer';
+import {Route, Switch} from 'react-router-dom';
+import { withRouter } from 'react-router-dom'
 
 const Dashboard = (props) => {
     const switchIcon = (iconPhrase) => {
         let i = iconPhrase.toLowerCase();
-        console.log(`PHRASE: ${i}`)
+        // console.log(`PHRASE: ${i}`)
             switch (i){
                 case 'sunny':
                 return 'wi wi-day-sunny';
@@ -108,9 +112,6 @@ const Dashboard = (props) => {
             return str;
         }
         let header = formatDate();
-
-        // 
-   
         return <DashboardDailyItem 
         key= {`fiveDay${idx}`}
         header={header} 
@@ -136,11 +137,12 @@ const Dashboard = (props) => {
     return (
         
         <div className="Dashboard">
-                {/* {fiveDayForecast} */}
-                {dailyForecast}
-
+              <Switch>
+                <Route path='/weekly-view' exact render={()=>fiveDayForecast}/>
+                <Route path='/daily-view' exact render={()=>dailyForecast}/>
+            </Switch>
         </div>
     );
 };
 
-export default Dashboard;
+export default withRouter(Dashboard);

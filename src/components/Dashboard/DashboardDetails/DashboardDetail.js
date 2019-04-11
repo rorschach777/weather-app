@@ -1,10 +1,13 @@
 import React from 'react';
-import Aux from '../hoc/Aux/Aux'
+import Aux from '../../../hoc/Aux/Aux';
+import {Route, Link} from 'react-router-dom';
 
 const DashboardDetail = (props) => {
     console.log(`DASHBOARD DETAIL CLASS: ${props.dayIcon}`)
     return (
+ 
         <Aux>
+        
             {/* Day Time Forecast */}
             <div className='dashboard-detail-item'>
                 <div className='dashboard-detail-item__feature'>
