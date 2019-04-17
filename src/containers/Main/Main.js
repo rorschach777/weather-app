@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 
 import {WeatherContainer} from '../WeatherContainer/WeatherContainer';
 import {withRouter} from 'react-router-dom';
-import {Error} from '../../components/Error/Error'
+import {Error} from '../../components/Error/Error';
+import './Main.scss'
 
 class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
             backgroundImageURL: null,
-            error: false
+            error: false,
+            windowHeight: 1500,
+            footerPosition: 0
     
         } 
     }
@@ -29,9 +32,6 @@ class Main extends Component {
         this.setState({error: true})
     }
 
-    componentDidUpdate(){
-        console.log(this.state)
-    }
     toggleError = () => {
         this.setState({
           show: !this.state.error
@@ -39,11 +39,29 @@ class Main extends Component {
     };
     closeError = () => {
         this.setState({ error: false });
+ 
     };
+    windowResize = () => {
+        window.addEventListener('resize', (e)=>{
+            this.setState({windowHeight: e.target.innerHeight})
+            
+        })
+    }
+    componentDidMount(){
+        this.windowResize()
+    }
+    componentDidUpdate(){
+        console.log(this.state)
+    }
     render() {
         return (
  
-                <div className="Main" style={{backgroundImage: `url(${this.state.backgroundImageURL})` }} >
+                <div className="Main" 
+                style={{
+                    backgroundImage: `url(${this.state.backgroundImageURL})`,
+                    height: this.state.windowHeight
+                    
+                    }} >
                     <Error 
                     heading='Please Enter A City Name'
                     message='You have to enter a city before results will be shown.'

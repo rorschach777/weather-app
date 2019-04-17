@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './DashboardDailyItem.scss';
 
 const DashboardDailyItem = (props) => {
 

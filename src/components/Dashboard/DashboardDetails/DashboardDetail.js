@@ -1,7 +1,7 @@
 import React from 'react';
 import Aux from '../../../hoc/Aux/Aux';
 import {Route, Link} from 'react-router-dom';
-
+import './DashboardDetail.scss'
 const DashboardDetail = (props) => {
     console.log(`DASHBOARD DETAIL CLASS: ${props.dayIcon}`)
     return (

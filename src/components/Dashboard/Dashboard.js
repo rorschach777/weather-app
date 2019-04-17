@@ -4,9 +4,10 @@ import React from 'react';
 import DashboardDailyItem from './DashboardDailyItems/DashboardDailyItem';
 import DashboardDetail from './DashboardDetails/DashboardDetail';
 
-import Footer from '../Footer';
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, Redirect} from 'react-router-dom';
 import { withRouter } from 'react-router-dom'
+
+import './Dashboard.scss';
 
 const Dashboard = (props) => {
     const switchIcon = (iconPhrase) => {
@@ -58,8 +59,6 @@ const Dashboard = (props) => {
     const fiveDayForecast = props.fiveDayForecast.map((cur, idx)=>{
         let iconPhrase = cur.Day.IconPhrase
         let phraseToClassName = switchIcon(iconPhrase)
-
-                
         const switchMonth = (m) => {
             switch(m){
                 case '01':
@@ -140,6 +139,7 @@ const Dashboard = (props) => {
               <Switch>
                 <Route path='/weekly-view' exact render={()=>fiveDayForecast}/>
                 <Route path='/daily-view' exact render={()=>dailyForecast}/>
+                <Redirect from='/' to='/daily-view'/>
             </Switch>
         </div>
     );

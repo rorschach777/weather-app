@@ -1,0 +1,6 @@
+// Variables, Mixins, Vendor Packages. 
+@import '../../styles/index.scss';
+.Title {
+    text-align: center;
+    margin: $gutter-vertical 0;
+}

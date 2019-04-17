@@ -1,0 +1,30 @@
+@import '../../styles/index.scss';
+.search-bar {
+    @include center-block($gutter-vertical);
+    padding: 1rem;
+    border-radius: 25rem;
+    border: none;
+    outline: none;
+    width: 108rem;
+    max-width: 85%;
+    transition: all .2s;
+    color: $color-gray-7;
+    &:focus{
+        transform: scale(1.1);
+    }
+    &--ready{
+        border: none;
+        color: #777;
+    }
+    &--error{
+        border: solid 2px $color-ios-red;
+        background-color: $color-white;
+        color: $color-ios-red;
+      ::-webkit-input-placeholder { 
+        color: $color-ios-red;;
+      }
+   
+    }
+
+}
+
