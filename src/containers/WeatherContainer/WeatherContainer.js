@@ -7,6 +7,9 @@ import Title from '../../components/Title/Title';
 import Dashboard from '../../components/Dashboard/Dashboard';
 import axios from 'axios';
 import './WeatherContainer.scss';
+import '../../assets/fonts/fonts/scss/weather-icons.scss';
+
+
 
 export class WeatherContainer extends Component {
     constructor(props){
@@ -64,7 +67,7 @@ export class WeatherContainer extends Component {
         return str;
     }
     ////////////////// THIS FUNCTION APPEARS TWICE - NEED TO RESOLVE THIS //////////////////////////
-     //////////////////Appears in Dasboard.js //////////////////////////
+     //////////////////Appears in Dasboard.js    //////////////////////////
     switchIcon = (iconPhrase) => {
         if (this.state.searched){
         let i = iconPhrase.toLowerCase();
@@ -262,18 +265,17 @@ export class WeatherContainer extends Component {
                     <Title text={searchedCity}/>
                     <Input  id='search-bar' handleValue={this.queryHandler.bind(this)} placeText="Search Location"></Input>
                     <Button click={this.sendQuery} classes='Button' text="Search"/>
-                  
                     <Hud 
                     icon={this.switchIcon(this.state.todayIcon)}
                     currentTemp={this.state.currentTemp}
                     date={today}
                     ></Hud>
-            
                 </main>
             </div>
             { this.state.searched ?
             <Dashboard
             formatDate={this.formatDate}
+            searched={this.state.searched}
             fiveDayForecast={this.state.fiveDayForecast}
             /> 
             : null

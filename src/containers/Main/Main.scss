@@ -1,6 +1,5 @@
 @import '../../styles/index.scss';
 .Main{
-  
     width: 100%;
     // height: 100%;
     top:0;
@@ -8,10 +7,8 @@
     margin: 0 !important;
     background-size: cover;
     background-repeat: none;
-
     z-index:2;
     @media(max-width: $mobile){
-      
         min-height: 100%;
         overflow: hidden;
         min-height: 220rem;

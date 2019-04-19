@@ -16,8 +16,30 @@
     top: 0;
     z-index: 50;
     border-bottom: 1px solid rgba(255,255,255,.3);
-    @media(max-width: $mobile){
+    /// MOBILE /// 
+    @media only screen and (max-width: $mobile){
+        padding: 0;
         flex-direction: column;
+        @include gradient-1(-180deg, .8,.9);
+        border: none;
+
     }
+
+    &__section {
+        // background-color: #ddd;
+    }
+
+    &__logo{
+        flex-basis: 140px;
+        @media only screen and (max-width: $mobile){ 
+            flex-basis: 5px;
+        }
+    
+    }
+    &__menu{
+
+    }
+
+
 
 }

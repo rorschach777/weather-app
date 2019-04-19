@@ -2,18 +2,13 @@
 
 // Variables, Mixins, Vendor Packages. 
 @import '../../styles/index.scss';
-
 .Logo {
-    @include flex-mobile(1);
-    flex-basis: 180px;
-
-   img{
-        color: $color-white;
-        max-width: 100%;
-        @media(max-width: $mobile){
-            max-width: 145px;
-            @include center-block(1.5rem)
-        }
+    max-width: 100%;
+    @media only screen and (max-width: $mobile){
+        max-width: 50%;
+        @include center-block(2rem);
     }
-
+   img{
+      max-width: 100%;
+    }
 }

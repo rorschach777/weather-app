@@ -1,8 +1,102 @@
 @import '../../../styles/index.scss';
+$menu-item-height: 3rem;
 .Menu {
     display: relative;
     z-index: 999;
     @include flex-mobile(1);
     justify-self: stretch;
+    &__mobile{
+        width: 100%;
+        
+        color: $color-white;
+        background-color: $color-black;
+        padding: $menu-item-height 0;
+        position: relative;
+        span{
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+        @media only screen and (min-width: $mobile){
+            display: none;
+         }
+    }
 
+}
+
+
+.burger{
+    position: absolute;
+    top: calc(#{$menu-item-height});
+    // top: 1.5rem;
+    right:16.5rem;
+    cursor: pointer;
+   
+    span {
+        -webkit-transition: .3s ease-in-out;
+        -moz-transition: .3s ease-in-out;
+        -o-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+        transform: translateY(0px);
+    }
+    &--closed{
+
+        span {
+            -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+            -o-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+            transform: translateY(0);
+        }
+        :nth-child(1){
+            transform: rotate(0deg) translateX(0px)
+        }
+        :nth-child(2){
+            display: block;
+ 
+        }
+        :nth-child(3){
+            
+            transform: rotate(0deg) translateX(0px)
+        }
+
+    }
+
+
+    &--open{
+        span {
+            -webkit-transition: .5s ease-in-out;
+            -moz-transition: .5s ease-in-out;
+            -o-transition: .5s ease-in-out;
+            transition: .5s ease-in-out;
+          
+            transform: translateY(2px);
+        }
+
+        :nth-child(1){
+            transform: rotate(-45deg) translateX(-3px)
+        }
+        :nth-child(2){
+            display: none;
+ 
+        }
+        :nth-child(3){
+            
+            transform: rotate(45deg) translateX(-3px)
+        }
+    }
+    &-menu {
+        width: 20px;
+        height: 2px;
+        margin: 3px 0;
+        border-radius: 4px;
+        background-color: #fff;
+        display: block;
+    
+       
+    } 
+    
+}
+
+.hide{
+    display: none;
 }

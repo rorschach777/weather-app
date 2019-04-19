@@ -5,9 +5,7 @@ import './DashboardDetail.scss'
 const DashboardDetail = (props) => {
     console.log(`DASHBOARD DETAIL CLASS: ${props.dayIcon}`)
     return (
- 
         <Aux>
-        
             {/* Day Time Forecast */}
             <div className='dashboard-detail-item'>
                 <div className='dashboard-detail-item__feature'>

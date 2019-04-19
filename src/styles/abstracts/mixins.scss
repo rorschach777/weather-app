@@ -28,6 +28,8 @@ margin: $x auto;
         flex-basis: 100% !important;
         text-align: center;
         justify-content: center;
-
      }
+}
+@mixin hide{
+display: none;
 }

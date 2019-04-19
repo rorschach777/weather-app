@@ -3,11 +3,11 @@ import React from 'react';
 
 import DashboardDailyItem from './DashboardDailyItems/DashboardDailyItem';
 import DashboardDetail from './DashboardDetails/DashboardDetail';
-
 import {Route, Switch, Redirect} from 'react-router-dom';
-import { withRouter } from 'react-router-dom'
-
+import { withRouter } from 'react-router-dom';
+import posed from 'react-pose';
 import './Dashboard.scss';
+
 
 const Dashboard = (props) => {
     const switchIcon = (iconPhrase) => {
@@ -111,17 +111,21 @@ const Dashboard = (props) => {
             return str;
         }
         let header = formatDate();
-        return <DashboardDailyItem 
-        key= {`fiveDay${idx}`}
-        header={header} 
-        temp={`${cur.Temperature.Maximum.Value}${cur.Temperature.Maximum.Unit}`}
-        iconText={phraseToClassName} 
-        text={`
-        Expect conditions to be ${cur.Day.IconPhrase.toLowerCase()}. Temperatures will range from ${cur.Temperature.Minimum.Value}${cur.Temperature.Minimum.Unit}, and 
-        ${cur.Temperature.Maximum.Value}${cur.Temperature.Minimum.Unit}. Expect ${cur.Night.IconPhrase.toLowerCase()} towards the evening. 
- 
+        return (
+            
+                <DashboardDailyItem 
+                key= {`fiveDay${idx}`}
+                header={header} 
+                temp={`${cur.Temperature.Maximum.Value}${cur.Temperature.Maximum.Unit}`}
+                iconText={phraseToClassName} 
+                text={`
+                Expect conditions to be ${cur.Day.IconPhrase.toLowerCase()}. Temperatures will range from ${cur.Temperature.Minimum.Value}${cur.Temperature.Minimum.Unit}, and 
+                ${cur.Temperature.Maximum.Value}${cur.Temperature.Minimum.Unit}. Expect ${cur.Night.IconPhrase.toLowerCase()} towards the evening. 
+                `} />
          
-         `} />
+        )
+        
+    
     });
     const dailyForecast = 
         <DashboardDetail 
@@ -135,7 +139,8 @@ const Dashboard = (props) => {
     
     return (
         
-        <div className="Dashboard">
+        
+        <div className="Dashboard" >
               <Switch>
                 <Route path='/weekly-view' exact render={()=>fiveDayForecast}/>
                 <Route path='/daily-view' exact render={()=>dailyForecast}/>

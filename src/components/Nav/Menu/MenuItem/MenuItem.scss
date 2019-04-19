@@ -1,19 +1,64 @@
 @import '../../../../styles/index.scss';
-.Menu-Item {
+$menu-item-height: 3rem;
+li {
     display: inline-block;
-    margin: 0 1.4rem;
-    list-style: none;
-    transition: all .2s;
-    font-size: 1.6rem;
-    @media(max-width: $tablet){
-        font-size: 1.8rem;
+    @media only screen and (max-width: $mobile){ 
+        display: block;
     }
-    &:hover{
-        transform: scale(1.3);
-        color: $color-nav-1;
-        cursor: pointer !important;
+    .Menu-Item {
+        display: inline-block;
+        margin: 0 1.4rem;
+        list-style: none;
+        transition: all .2s;
+        font-size: 1.6rem;
+        text-decoration: none;
+        position: relative;
+        @media(max-width: $tablet){
+            font-size: 1.8rem;
+        }
+        @media only screen and (max-width: $mobile){
+            width: 100%;
+            padding: $menu-item-height 0;
+            border-bottom: 1px solid rgba(255,255,255,.3);
+            box-sizing: border-box;
+            margin: 0;
+            opacity: .9;
+        }
+        &--standard{
+            @media only screen and (max-width: $mobile){
+                background-color: $color-2;
+             }
+            &:hover{
+                transform: scale(1.3);
+                color: $color-nav-1;
+                cursor: pointer !important;
+                @media only screen and (max-width: $mobile){
+                    transform: none;
+                 }
+            }
+            &:active{
+                color: $color-nav-1;
+            }
+        }
+        &--hide{
+       
+       
+        }
+    
+    
+    
+    
+        &--menu {
+            @media only screen and (max-width: $mobile){
+                background-color: $color-black;
+             }
+            @media only screen and (min-width: $tablet){
+                @include hide;
+    
+                opacity: 1;
+            }
+    
+        }
     }
-    &:active{
-        color: $color-nav-1;
-    }
+    
 }

@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import {WeatherContainer} from '../WeatherContainer/WeatherContainer';
 import {withRouter} from 'react-router-dom';
 import {Error} from '../../components/Error/Error';
+
 import './Main.scss'
 
 class Main extends Component {
@@ -75,8 +76,6 @@ class Main extends Component {
                     />
       
                 </div>
-                
-   
         );
     }
 }
